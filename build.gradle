@@ -25,9 +25,11 @@ repositories {
 
 dependencies {
 	implementation 'org.xerial:sqlite-jdbc:3.41.2.2'
-//	runtimeOnly 'org.hibernate.orm:hibernate-community-dialects:6.2.4.Final'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//  implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.3.5'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client:3.3.5'
+
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
@@ -38,14 +40,17 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-	implementation group: 'io.github.cdimascio', name: 'dotenv-java', version: '3.0.2'
+//	implementation group: 'io.github.cdimascio', name: 'dotenv-java', version: '3.0.2'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
 	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 
-	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
+
+	runtimeOnly 'org.hibernate.orm:hibernate-community-dialects:6.2.4.Final'
+
 
 	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
 	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
@@ -68,7 +73,7 @@ dependencies {
 
 	implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
 
-	implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+	implementation 'io.github.cdimascio:dotenv-java:3.0.2'
 
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 

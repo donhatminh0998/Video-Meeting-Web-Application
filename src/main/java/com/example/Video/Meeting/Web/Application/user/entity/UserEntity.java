@@ -13,7 +13,7 @@ import lombok.*;
 @Builder
 @Table(name = "user")
 public class UserEntity extends BaseEntity {
-    @Column(unique = true)
+ //   @Column(unique = true)
     private String username;
     private String password;
     private String name;
@@ -23,10 +23,10 @@ public class UserEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    @Column(unique = true)
+   // @Column(unique = true)
     private String email;
 
-    @Column(unique = true)
+ //   @Column(unique = true)
     private String phone;
     private String profileImgPath;
 
