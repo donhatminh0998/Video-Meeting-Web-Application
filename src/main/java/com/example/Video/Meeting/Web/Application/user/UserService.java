@@ -55,14 +55,15 @@ public class UserService {
         //check if email is existing
         if (userRepository.existsByEmail(dto.getEmail()))
             throw new GlobalException(GlobalErrorCode.EMAIL_ALREADY_EXISTS);
+        // Check username
+        if (userRepository.existsByUsername(dto.getUsername()))
+            throw new GlobalException(GlobalErrorCode.USERNAME_ALREADY_EXISTS);
 
         //Check pass
         if (!dto.getPassword().equals(dto.getPassCheck()))
             throw new GlobalException(GlobalErrorCode.PASSWORD_MISMATCH);
 
-        // Check username
-        if (userRepository.existsByUsername(dto.getUsername()))
-            throw new GlobalException(GlobalErrorCode.USERNAME_ALREADY_EXISTS);
+
         //Create a new user with role ROLE_USER
         UserEntity newUser = UserEntity.builder()
                 .username(dto.getUsername())
